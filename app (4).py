@@ -41,4 +41,5 @@ if st.button("Generate"):
             prompt = topic
 
 response = model.generate_content(prompt)
+
 st.write(response.text)
