@@ -40,14 +40,5 @@ if st.button("Generate"):
         else:
             prompt = topic
 
-from google.api_core.exceptions import ResourceExhausted
-
-try:
-    response = model.generate_content(prompt)
-    st.write(response.text)
-
-except ResourceExhausted:
-    st.error("⚠️ The AI service is temporarily busy. Please wait 1 minute and try again.")
-
-except Exception as e:
-    st.error(f"Error: {e}")
+response = model.generate_content(prompt)
+st.write(response.text)
